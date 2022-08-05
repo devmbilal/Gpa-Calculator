@@ -15,7 +15,6 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-
             Center(
               child: Container(
                 width: 250,
@@ -32,7 +31,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(
               height: 30,
             ),
@@ -83,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen_one(),
+                          builder: (context) => const ScreenOne(),
                         ));
                   },
                   child: const Center(
@@ -117,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen_one(),
+                          builder: (context) => const ScreenOne(),
                         ));
                   },
                   child: const Center(
