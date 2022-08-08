@@ -10,7 +10,29 @@ class ScreenOne extends StatefulWidget {
 }
 
 class _ScreenOneState extends State<ScreenOne> {
-  double gpa=0;
+  double  cr=0;
+  double gpa(String m) {
+    if (double.parse(m) < 50) {
+      return 0.0;
+    } else if (double.parse(m) <= 54) {
+      return 1.0;
+    } else if (double.parse(m) <= 59) {
+      return 2.0;
+    } else if (double.parse(m) <= 63) {
+      return 2.5;
+    } else if (double.parse(m) <= 67) {
+      return 2.8;
+    } else if (double.parse(m) <= 71) {
+      return 3.0;
+    } else if (double.parse(m) <= 75) {
+      return 3.5;
+    } else if (double.parse(m) <= 79) {
+      return 3.8;
+    } else {
+      return 4.0;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -203,7 +225,6 @@ class _ScreenOneState extends State<ScreenOne> {
                               fontSize: 14,
                               color: red,
                             ),
-
                             decoration: InputDecoration(
                               labelText: ('0-100'),
                               labelStyle: const TextStyle(
@@ -220,9 +241,10 @@ class _ScreenOneState extends State<ScreenOne> {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            onChanged: (val)
-                            {
-
+                            onChanged: (String val) {
+                              print(gpa(val));
+                              setState(() {
+                              });
                             },
                           ),
                         ),
