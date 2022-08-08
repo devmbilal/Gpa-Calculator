@@ -36,8 +36,164 @@ class _ScreenOneState extends State<ScreenOne> {
               ],
             ),
           ),
-          body: const TabBarView(
-            children: [DropDown(), DropDown()],
+          body: TabBarView(
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30,
+                    horizontal: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 120,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: white,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: teal,
+                              ),
+                            ],
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Subjects',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: ('Pop one'),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                          child: VerticalDivider(
+                            color: grey,
+                            thickness: 3,
+                          ),
+                        ),
+                        Container(
+                          height: 30,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: white,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: teal,
+                              ),
+                            ],
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Total',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: ('Pop one'),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                          child: VerticalDivider(
+                            color: grey,
+                            thickness: 3,
+                          ),
+                        ),
+                        Container(
+                          height: 30,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: white,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: teal,
+                              ),
+                            ],
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Obtain',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: ('Pop one'),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const DropDown(),
+                        const SizedBox(
+                          height: 30,
+                          child: VerticalDivider(
+                            color: grey,
+                            thickness: 3,
+                          ),
+                        ),
+                        Container(
+                          height: 30,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: teal,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              '100',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                          child: VerticalDivider(
+                            color: grey,
+                            thickness: 3,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              DropDown(),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: teal,
+            onPressed: (){},
+            child: const Icon(Icons.add),
           ),
         ),
       ),
