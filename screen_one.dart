@@ -10,6 +10,7 @@ class ScreenOne extends StatefulWidget {
 }
 
 class _ScreenOneState extends State<ScreenOne> {
+  double gpa=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,8 +42,8 @@ class _ScreenOneState extends State<ScreenOne> {
               Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30,
-                    horizontal: 8),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 30, horizontal: 8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,6 +183,49 @@ class _ScreenOneState extends State<ScreenOne> {
                             thickness: 3,
                           ),
                         ),
+                        Container(
+                          height: 30,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: white,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: teal,
+                              ),
+                            ],
+                          ),
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            style: const TextStyle(
+                              fontFamily: ('Pop one'),
+                              fontSize: 14,
+                              color: red,
+                            ),
+
+                            decoration: InputDecoration(
+                              labelText: ('0-100'),
+                              labelStyle: const TextStyle(
+                                fontSize: 14,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    const BorderSide(color: red, width: 2),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                    const BorderSide(color: teal, width: 2),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            onChanged: (val)
+                            {
+
+                            },
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -192,7 +236,7 @@ class _ScreenOneState extends State<ScreenOne> {
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: teal,
-            onPressed: (){},
+            onPressed: () {},
             child: const Icon(Icons.add),
           ),
         ),
