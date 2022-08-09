@@ -3,8 +3,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:gpa_calculator/constants.dart';
 
 class DropDown extends StatefulWidget {
- final double cr;
-  const DropDown({Key? key,required this.cr}) : super(key: key);
+  final double credit;
+  const DropDown({Key? key,required this.credit }) : super(key: key);
 
   @override
   State<DropDown> createState() => _DropDownState();
@@ -19,9 +19,10 @@ class _DropDownState extends State<DropDown> {
     'ENG',
   ];
   String? selectedValue;
-  double cr=0;
+
   @override
   Widget build(BuildContext context) {
+
     return DropdownButtonHideUnderline(
       child: DropdownButton2(
         isExpanded: true,
@@ -66,8 +67,7 @@ class _DropDownState extends State<DropDown> {
         onChanged: (value) {
           setState(() {
             selectedValue=value as String;
-           cr=double.parse(selectedValue!);
-           print(cr);
+            credit=double.parse(selectedValue!);
           });
         },
         icon: const Icon(

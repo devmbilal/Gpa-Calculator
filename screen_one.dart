@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_calculator/constants.dart';
-import 'package:gpa_calculator/dropdown.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class ScreenOne extends StatefulWidget {
   const ScreenOne({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class ScreenOne extends StatefulWidget {
 }
 
 class _ScreenOneState extends State<ScreenOne> {
-  double  cr=0;
+
   double gpa(String m) {
     if (double.parse(m) < 50) {
       return 0.0;
@@ -33,8 +33,30 @@ class _ScreenOneState extends State<ScreenOne> {
     }
   }
 
+  final List<String> items = [
+    'PSP-2',
+    'PS',
+    'ICT',
+    'Calculas',
+    'ENG',
+  ];
+  String? selectedValue;
+  double credit=0;
+  double gp=0;
+  double totalgpa=0;
+  double abc=0;
+  double totalcredit=0;
   @override
   Widget build(BuildContext context) {
+     abc=gp*credit;
+     print(gp);
+     print(credit);
+     totalgpa+=abc;
+
+     totalcredit+=credit;
+     print(totalcredit);
+     gp=0;
+
     return MaterialApp(
       home: DefaultTabController(
         length: 2,
@@ -171,7 +193,89 @@ class _ScreenOneState extends State<ScreenOne> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const DropDown(),
+                         DropdownButtonHideUnderline(
+                          child: DropdownButton2(
+                            isExpanded: true,
+                            hint: Row(
+                              children: const [
+                                Icon(
+                                  Icons.list,
+                                  size: 16,
+                                  color: white,
+                                ),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    'Subjects',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: white,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            items: items
+                                .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ))
+                                .toList(),
+                            value: selectedValue,
+                            onChanged: (value) {
+                              setState(() {
+                                selectedValue=value as String;
+                                int length=(selectedValue!.length)-1;
+                                String mgpa=selectedValue![length];
+                                credit=double.parse(mgpa);
+                              });
+
+                            },
+                            icon: const Icon(
+                              Icons.arrow_forward_ios_outlined,
+                            ),
+                            iconSize: 14,
+                            iconEnabledColor: white,
+                            iconDisabledColor: Colors.grey,
+                            buttonHeight: 30,
+                            buttonWidth: 120,
+                            buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                            buttonDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              border: Border.all(
+                                color: Colors.black26,
+                              ),
+                              color: teal,
+                            ),
+                            buttonElevation: 2,
+                            itemHeight: 40,
+                            itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                            dropdownMaxHeight: 200,
+                            dropdownWidth: 120,
+                            dropdownPadding: null,
+                            dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              color: teal,
+                            ),
+                            dropdownElevation: 8,
+                            scrollbarRadius: const Radius.circular(40),
+                            scrollbarThickness: 6,
+                            scrollbarAlwaysShow: true,
+                            offset: const Offset(-20, 0),
+                          ),
+                        ),
                         const SizedBox(
                           height: 30,
                           child: VerticalDivider(
@@ -242,7 +346,7 @@ class _ScreenOneState extends State<ScreenOne> {
                               ),
                             ),
                             onChanged: (String val) {
-                              print(gpa(val));
+                              gp=gpa(val);
                               setState(() {
                               });
                             },
@@ -253,7 +357,7 @@ class _ScreenOneState extends State<ScreenOne> {
                   ),
                 ],
               ),
-              DropDown(),
+              const Text('Hello'),
             ],
           ),
           floatingActionButton: FloatingActionButton(
