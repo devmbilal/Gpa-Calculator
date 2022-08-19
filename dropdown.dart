@@ -62,7 +62,9 @@ class _DropDownState extends State<DropDown> {
         onChanged: (value) {
           setState(() {
             selectedValue=value as String;
-            //credit=double.parse(selectedValue!);
+            int length=(selectedValue!.length)-1;
+            String mgpa=selectedValue![length];
+            credit=double.parse(mgpa);
           });
         },
         icon: const Icon(

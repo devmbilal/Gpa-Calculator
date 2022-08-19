@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gpa_calculator/constants.dart';
-import 'package:gpa_calculator/dropdown.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
+
+import 'dropdown.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -34,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
                       child: Container(
                         height: 60,
                         decoration: BoxDecoration(
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage(
                                   'assets/Untitled design (3).png',
                                 ),
@@ -119,7 +121,49 @@ class _MainScreenState extends State<MainScreen> {
                       color: blackblue,
                       thickness: 3,
                     ),
-                    Expanded(child: Container())
+                    Expanded(child: 
+                    Column(
+                      children: [
+                        Row(
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(8,0,8,0),
+                              child: Text(('Units Total'),style: TextStyle(
+                                fontSize: 16,
+                              ),),
+                            ),
+                            Expanded(child: SizedBox()),
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(('Your GPA'),style: TextStyle(
+                                fontSize: 16,
+                              ),),
+                            ),
+                          ],
+                        ),
+                      const SizedBox(height:10),
+                        Row(
+                          children: const [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(8,0,8,0),
+                              child: Text(('144'),style: TextStyle(
+                                fontSize:30,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            ),
+                            Expanded(child: SizedBox()),
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(('1.75'),style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: red,
+                                fontSize: 40,
+                              ),),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )),
                   ],
                 ),
               ),
