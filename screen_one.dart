@@ -62,7 +62,7 @@ class _ScreenOneState extends State<ScreenOne> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: teal,
+            backgroundColor: blackblue,
             centerTitle: true,
             title: const Text(
               'CS Department',
@@ -101,7 +101,7 @@ class _ScreenOneState extends State<ScreenOne> {
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 10,
-                                color: teal,
+                                color: blackblue,
                               ),
                             ],
                           ),
@@ -134,7 +134,7 @@ class _ScreenOneState extends State<ScreenOne> {
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 10,
-                                color: teal,
+                                color: blackblue,
                               ),
                             ],
                           ),
@@ -167,7 +167,7 @@ class _ScreenOneState extends State<ScreenOne> {
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 10,
-                                color: teal,
+                                color: blackblue,
                               ),
                             ],
                           ),
@@ -257,7 +257,7 @@ class _ScreenOneState extends State<ScreenOne> {
                               border: Border.all(
                                 color: Colors.black26,
                               ),
-                              color: teal,
+                              color: blackblue,
                             ),
                             buttonElevation: 2,
                             itemHeight: 40,
@@ -267,7 +267,7 @@ class _ScreenOneState extends State<ScreenOne> {
                             dropdownPadding: null,
                             dropdownDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14),
-                              color: teal,
+                              color: blackblue,
                             ),
                             dropdownElevation: 8,
                             scrollbarRadius: const Radius.circular(40),
@@ -284,11 +284,11 @@ class _ScreenOneState extends State<ScreenOne> {
                           ),
                         ),
                         Container(
-                          height: 30,
+                          height: 40,
                           width: 80,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
-                            color: teal,
+                            color: blackblue,
                           ),
                           child: const Center(
                             child: Text(
@@ -318,7 +318,7 @@ class _ScreenOneState extends State<ScreenOne> {
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 10,
-                                color: teal,
+                                color: blackblue,
                               ),
                             ],
                           ),
@@ -341,7 +341,7 @@ class _ScreenOneState extends State<ScreenOne> {
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    const BorderSide(color: teal, width: 2),
+                                    const BorderSide(color: blackblue, width: 2),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                             ),
@@ -361,7 +361,7 @@ class _ScreenOneState extends State<ScreenOne> {
             ],
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: teal,
+            backgroundColor: blackblue,
             onPressed: () {},
             child: const Icon(Icons.add),
           ),

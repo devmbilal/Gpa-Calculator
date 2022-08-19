@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:gpa_calculator/constants.dart';
-
+import 'package:dropdown_button2/dropdown_button2.dart';
 class DropDown extends StatefulWidget {
-  final double credit;
-  const DropDown({Key? key,required this.credit }) : super(key: key);
-
   @override
   State<DropDown> createState() => _DropDownState();
 }
@@ -40,8 +36,7 @@ class _DropDownState extends State<DropDown> {
               child: Text(
                 'Subjects',
                 style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                   color: white,
                 ),
                 overflow: TextOverflow.ellipsis,
@@ -67,7 +62,7 @@ class _DropDownState extends State<DropDown> {
         onChanged: (value) {
           setState(() {
             selectedValue=value as String;
-            credit=double.parse(selectedValue!);
+            //credit=double.parse(selectedValue!);
           });
         },
         icon: const Icon(
@@ -84,17 +79,17 @@ class _DropDownState extends State<DropDown> {
           border: Border.all(
             color: Colors.black26,
           ),
-          color: teal,
+          color: blackblue,
         ),
         buttonElevation: 2,
         itemHeight: 40,
         itemPadding: const EdgeInsets.only(left: 14, right: 14),
         dropdownMaxHeight: 200,
         dropdownWidth: 120,
-        dropdownPadding: null,
+        dropdownPadding:null,
         dropdownDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          color: teal,
+          color: blackblue,
         ),
         dropdownElevation: 8,
         scrollbarRadius: const Radius.circular(40),

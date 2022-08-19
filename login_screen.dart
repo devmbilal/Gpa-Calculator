@@ -69,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
                 width: 300,
                 decoration: BoxDecoration(
-                  color: teal,
+                  color: blackblue,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Colors.black12,
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
                 width: 300,
                 decoration: BoxDecoration(
-                  color: teal,
+                  color: blackblue,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Colors.black12,
